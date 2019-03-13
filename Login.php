@@ -15,24 +15,25 @@
 
 <body>
     
-     <?php    
- //   session_start(); //use this function to start session
-    if (isset($_POST["submit"])){ 
-    
-  //  $_session["email"] = $_POST["email"];
-  //  $_session["password"] = $_POST["pass"];
-  //  $_session['Last_Active'] = time();     // store the start time of login inside Last_active         
+     <?php 
+      session_start();
+      $db = mysqli_connect('localhost','abdulazez','','Daily Experience Platform');
+   
+  if (isset($_POST["submit"])){ 
+  
+    $_SESSION["em"] =  $_POST["em"];
+                $_SESSION["pass"] = $_POST["pass"];
+                 $_SESSION["Last_active"] = time();
+                
              
             if (!empty($_POST["em"]) && !empty($_POST["pass"])){
-                 
+               
                $email = $_POST['em'];
                $password = $_POST['pass'];
            
     
    
-    
-    $db = mysqli_connect('localhost','abdulazez','','Daily Experience Platform');
-    
+   
 
     $sql = "select email and password from Creators where email = '$email'  and   password = '$password'";
   
@@ -40,8 +41,9 @@
    
     if (mysqli_num_rows($statement) == 1){
  
+  
     
-        header("Location:HomePage.php");
+    header("Location:HomePage.php");
      
     }
     
@@ -105,14 +107,10 @@
  </div>
  
      
- 
+          <a id = "forget"  href="ForgetPassword.php" > نسيت كلمة المرور؟</a>
+
  <input type="submit" name="submit"  value = "تسجيل الدخول">
- 
- 
-       
-      
-     </form>
-<script  src="JS.js"></script>
+ --<script  src="JS.js"></script>
 </body>
 
 </html>
