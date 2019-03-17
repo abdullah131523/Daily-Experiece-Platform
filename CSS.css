@@ -1,0 +1,617 @@
+body{
+  background-image: url("image11.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+/* hear style */
+.headerStyle a {
+  list-style-type: none;
+  color: white;
+  
+}
+
+#position{
+  margin-right: 40px;
+    position: absolute;
+    top: 75px;
+    right: 10px;
+}
+#menu ul li {
+    
+    float: right;
+    text-align: center;
+    list-style-type: none;
+    width: 150px;
+    height: 70px;
+    line-height: 70px;
+    background-color:#604020;
+    border-radius: 25px;
+    margin-right: 15px;
+  }
+  #menu ul li a {
+      text-decoration: none;
+      color: white;
+      
+
+  }
+  
+  #menu ul li ul{
+      display: none;
+
+  }
+  #menu ul li:hover > ul {
+      display: block;
+margin-left: 120px;
+      
+  }
+
+  #menu ul li:hover {
+      background-color:#c2c2a3;
+
+  }
+  
+  
+   .search {
+display:block;
+position: absolute;
+top: 5px;
+right: 40px;
+
+    }
+   
+  
+    .search input[type=text] {
+    margin-top: 14px;
+    border: none;
+   padding-top: 8px;
+   padding-bottom: 8px;
+   padding-right: 8px;
+   padding-left: 150px;
+        text-align:right;
+
+    font-size: 20px;
+    border-bottom-left-radius:45px;
+    border-top-left-radius:45px;
+
+  }
+  
+    .search button {
+          float: right;
+          padding: 8px;
+          margin-top: 14px;
+          margin-right: 20px;
+          padding-right: 35px;
+          margin-left:3px;
+          background-color: orange;
+          font-size: 20px;
+          border: none;
+          cursor: pointer;
+          color:white;
+          border-bottom-right-radius:45px;
+          border-top-right-radius:45px;
+        
+        }
+      .search button > i {
+           margin-left:15px;
+       }
+   .btnpostheader{
+      
+      display: block ; 
+      
+   }
+   
+/*stlye signup , login*/ 
+
+    #form{
+        border-radius: 30px;
+       
+       background-color:#c2c2a3;
+      border: 7px solid #c2c2a3;
+       
+        padding: 40px;
+        width: 400px;
+        height: 600px;
+        position: absolute;
+      top: 120px;
+      left: 130px;
+      text-align: center;
+      opacity: 1.1;
+      
+    }
+    #form input  {
+
+        text-align: center;
+        width:300px;
+        border-radius: 20px;
+        padding: 9px;
+        margin: 15px;
+        font-size: 20px;
+        border-style: solid;
+         border-width:3px;
+       border-color: #c2c2a3;
+      
+        
+    }
+ 
+   
+    #Sregister , #LsignUp  {
+        display: block;
+        position: relative;
+        left: 120px;
+        top: 10px;
+        margin: 7px;
+        border-radius: 40px;
+        background-color: white;
+        font-size: 18px;
+       
+     }
+     #Llogin {
+        display: block;
+        position: relative;
+        left: 105px;
+        top: 10px;
+        margin: 7px;
+        border-radius: 40px;
+        background-color: white;
+        font-size: 18px;
+       
+     }
+     
+    
+     
+     #forget{
+        position: absolute;
+        left: 250px;
+        top: 200px;
+     }
+     label {
+         font-size: 20px;
+     }
+     
+     .content_error{
+         color: #ff0000;
+     }
+     
+    .error {color: #FF0000;}
+    
+    
+    /* New Post */ 
+
+  .centerNewPost{
+            position: absolute;
+            margin: auto;
+            margin-top: 170px;
+            margin-bottom: 100px;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            width: 60%;
+            height: 70%;
+            background-color: #e6e6e6;
+            border-radius: 3px; 
+            overflow: hidden;
+        }
+        .centerNewPost{
+            border-radius: 10px;
+            border: 3px solid  #808080;
+        }
+        .centerNewPost h4 { 
+        margin-right:38%;
+        float: right;
+        margin-top: 20px;
+        }
+        .centerNewPost .center{
+            float: right;
+            display: block;
+            width: 560px;
+            
+        }
+       .centerNewPost .titlecss,.centerNewPost .textareacss
+        {
+            margin-left:38%;
+        }
+       .centerNewPost .titlecss{
+         margin-right:25%;    
+         border-radius: 10px;
+         height: 30px;
+         float: right;
+         width: 300px;
+         }
+       .centerNewPost .titlecss:hover{
+            border:2px solid  #808080; 
+        }
+       .centerNewPost .textareacss{
+         margin-right:25%;    
+         border-radius: 10px;
+         height: 30px; 
+        float: right;
+
+        }
+        .centerNewPost .textareacss:hover{
+            border:2px solid  #808080; 
+        }
+        /* input file code */ 
+        .centerNewPost .uploadimage::-webkit-file-upload-button
+        {
+             visibility: hidden; 
+        }
+       .centerNewPost .uploadimage::before {
+            content:'اضف صورة';
+            display: inline-block;
+            background: linear-gradient(top, #f9f9f9, #f9f9f9);
+            border: 1px solid #999;
+            border-radius: 3px;
+            padding: 8px 15px 3px 8px;
+            outline: none;
+            -webkit-user-select: none;
+            cursor: pointer;
+            text-shadow: 1px 1px #fff;
+            font-weight: 700;
+            font-size: 15pt;
+            overflow: hidden;
+            padding-right: 85px;
+            padding-left:80px;
+            
+         }
+       
+        .centerNewPost .uploadimage:hover::before{
+            border: 2px solid #808080;
+         }
+       .centerNewPost .uploadimage::before{
+          background: -webkit-linear-gradient(top, #cccccc, #cccccc);
+         }   
+        .centerNewPost .fileupload{
+            float: right;
+            margin-right: 150px;
+            margin-top: 50px;
+        }
+        .centerNewPost  .sendmassage {
+            display: block ; 
+            margin-top: 70px;
+            margin-left: 25px;
+            text-decoration: none; 
+            background-color: #cccccc; 
+            width: 50px;
+            font-weight: 700;
+            font-size: 15pt;
+            text-align: center;
+            color: black;
+            float: left; 
+            border: 1px solid #999;
+            text-shadow: 1px 1px #fff;
+            margin-right: 20px;
+            border-radius: 3px;
+
+        }
+       
+        .centerNewPost .sendmassage:hover{
+                       border: 2px solid #808080;
+        }
+        
+        /* image code */
+       .centerNewPost .gallery{
+            box-sizing: border-box;
+            width: 25%;
+            height: 60%;
+            border: 2px solid black ;
+            float: left;
+            margin-left: 10px;
+            margin-top: 20px;
+            overflow: hidden;
+        }
+      .centerNewPost   #image-display{
+          width: 100%;
+          height: 100%;
+        }
+      
+/* Add step */ 
+
+   .centerAddStep{
+            position: absolute;
+            margin: auto;
+            margin-top: 170px;
+            margin-bottom: 100px;
+            z-index: -1;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            width: 80%;
+            height:120%;
+            background-color: #e6e6e6;
+            border-radius: 3px; 
+            overflow: hidden;
+        }
+        .centerAddStep{
+            border-radius: 10px;
+            border: 3px solid  #808080;
+        }
+        
+     .centerAddStep .uploadimage::-webkit-file-upload-button
+        {
+             visibility: hidden; 
+        }
+        .centerAddStep .uploadimage{
+            width: 100%;
+            height: 50%;
+        }
+       .centerAddStep .uploadimage::before {
+            content: 'اضف الخطوة';
+            display: inline-block;
+            background: linear-gradient(top, #f9f9f9, #f9f9f9);
+            border: 1px solid #999;
+            border-radius: 3px;
+            margin-left: 20px;
+            width: 55%;
+            height: 40%;
+            outline: none;
+            -webkit-user-select: none;
+            cursor: pointer;
+            text-shadow: 1px 1px #fff;
+            font-weight: 700;
+            font-size: 15pt;
+            overflow: hidden;
+            padding-left: 40%;
+            padding-top: 25px; 
+         }
+          .centerAddStep .uploadimage:hover::before{
+            border: 2px solid #808080;
+         }
+       .centerAddStep .uploadimage::before{
+          background: -webkit-linear-gradient(top, #cccccc, #cccccc);
+         }   
+      .centerAddStep  .fileupload{
+            width: 100%;
+            height: 30%;
+            margin-right: 70px;
+            margin-top: 50px;
+            margin-bottom: 25px;
+        }
+        
+      .centerAddStep  .titlecss{   
+         border-radius: 10px;
+         width: 95%;
+         height: 30px;
+         margin-left: 20px;
+         }
+      .centerAddStep  .titlecss:hover{
+            border:2px solid  #808080; 
+        }
+      .centerAddStep  div h4 { 
+        padding-left: 41%;
+        }
+       .centerAddStep .edit{
+           display: block;
+            width :95%;
+            margin-left :23px;
+        }
+    
+/* Edit post  */
+
+ .centerEditPost {
+            position: absolute;
+            margin: auto;
+              margin-top: 170px;
+            margin-bottom: 100px;
+            z-index: -1;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            width: 80%;
+            height: 95%;
+            background-color: #e6e6e6;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .centerEditPost {
+            border-radius: 10px;
+            border: 3px solid #808080;
+        }
+
+        .centerEditPost h3{
+            text-align: center;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+
+        .centerEditPost .gallery {
+            box-sizing: border-box;
+            width: 32%;
+            height: 40%;
+            border: 2px solid black;
+            float: right;
+            margin-right: 20px;
+            margin-top: 20px;
+
+        }
+
+       .centerEditPost #image-display {
+            width: 100%;
+            height: 100%;
+        }
+
+        .centerEditPost .gallery ul li {
+            margin-right: 20px;
+            display: inline-block;
+            float: right;
+            margin-top: 20px;
+
+        }
+
+       .centerEditPost .gallery .fa {
+            font-size: 20px;
+            cursor: pointer;
+            user-select: none;
+            float: right;
+            
+        }
+
+      .centerEditPost  .gallery .fa:hover,
+      .centerEditPost  .gallery>.comment:hover,
+      .centerEditPost  .gallery>.linksource:hover
+       {
+            color: red;
+        }
+
+       .centerEditPost .gallery .comment,.centerEditPost .gallery .linksource {
+            font-size: 20px;
+            cursor: pointer;
+            float: right;
+            user-select: none;
+            text-decoration: underline;
+        }
+      .centerEditPost  .share{
+            margin-top: 40px;
+            width:65%;
+            height: 80%;
+        }
+       .centerEditPost .share .link{
+            display: block; 
+            background-color: gray;
+            text-align: center;
+            width: 200px;
+            height: 36px;
+            padding-bottom: 25px;
+            padding-top: 20px;
+            color: white;
+            border-radius: 25px;
+            text-decoration: none;
+            margin: auto;
+            margin-bottom: 20px;
+        }
+       .centerEditPost .share .shlink:hover{
+            background-color: red;
+        }
+       .centerEditPost #popup{
+            width: 500px;
+            height: 120px;
+            background-color: darkgray;
+            border-radius: 20px;        
+
+        }
+      .centerEditPost  #popup .popuplink{
+            margin-top: 18px;
+            width: 450px; 
+            height: 30px;
+            border-radius: 10px;     
+            margin-bottom: 15px;
+        }
+      .centerEditPost  #popup .btnpop{
+            margin: auto;
+            width: 60px;
+            height: 40px;
+            border-radius: 10px;
+            background-color: floralwhite;
+        }
+       .centerEditPost ::placeholder{
+            text-align: center;
+            color: black;
+        }
+
+/* information Post Page */ 
+
+  .centerPostPage{
+            position: absolute;
+            margin: auto;
+              margin-top: 170px;
+            margin-bottom: 100px;
+            z-index: -1;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            width: 80%;
+            height:95%;
+            background-color: #e6e6e6;
+            border-radius: 3px; 
+            overflow: hidden;
+        }
+        .centerPostPage{
+            border-radius: 10px;
+            border: 3px solid  #808080;
+        }
+        
+       .centerPostPage #step{
+            width: 50%;
+            height: 75%;
+            margin-left: 30px;
+            margin-top: 50px;
+            float:left;
+            border: 2px solid black ;
+            overflow: scroll;
+
+            
+        }
+        .centerPostPage #step>#numstep{
+         display:inline-block;
+          width: 90%; 
+          height: 42px;
+         padding-top: 15px;
+         margin-bottom: 5px;
+         float: left;
+        }
+       .centerPostPage #step>.stepbtn {
+        width: 90%; 
+        height: 42px;
+        float: left;
+        margin-left: 15px;
+        margin-bottom: 5px;
+        }
+     
+       .centerPostPage .gallery{
+            box-sizing: border-box;
+            width: 25%;
+            height: 60%;
+            border: 2px solid black ;
+            float: right;
+            margin-right: 10px;
+            margin-top: 20px;
+            overflow: hidden;
+        }
+        
+         .centerPostPage h3 , .centerPostPage .fileupload h3{
+          text-align: center;
+        }
+         #image-display{
+          width: 100%;
+          height: 100%;
+        }
+       
+        .centerPostPage a {
+            display: block ;
+            text-decoration: none; 
+            background-color: #cccccc; 
+            width: 150px;
+            height: 30px;
+            font-weight: 700;
+            font-size: 15pt;
+            text-align: center;
+            color: black;
+            border: 1px solid #999;
+            text-shadow: 1px 1px #fff;
+            border-radius: 3px;
+            margin-left: 15px;
+
+        }
+        .centerPostPage select
+        {
+            margin-top: 50px;
+            width: 150px;
+            height: 30px;
+            font-weight: 700;
+            font-size: 15pt;
+            border-radius: 3px;
+            margin-left: 10px;
+
+        }
+        .centerPostPage .info{
+            width: 20%;
+            height: 20%;
+            float: right; 
+            margin-top: 200px;
+
+        }
+        
