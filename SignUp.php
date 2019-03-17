@@ -14,12 +14,17 @@
 </head>
 
 <body>
+  
     
+    <?php
     
-    <?php    
-    
-     $db = mysqli_connect('localhost','abdulazez','','Daily Experience Platform');
-     
+    try{
+     require 'db_connection.php';
+   
+      $nameErr = "";
+      $emailErr = "";
+      $passwordErr = "";
+
     if (isset($_POST['submit'])){ 
     
                $username = $_POST['uname'];
@@ -27,18 +32,21 @@
                $email_confirm = $_POST['email_confirm'];
                $password = $_POST['pass'];
                $password_confirm = $_POST['pass_confirm'];
-    
-    
-   
-    
+                
+                
+                $password_encrypt = hash("sha512",$password);
+       
+             
+               
+                
     
     $sql_username = "select * from Creators where username = '$username'";
     $sql_email = "select * from Creators where email = '$email'";
-    $sql_password = "select * from Creators where password = '$password' ";
+    $sql_password = "select * from Creators where password = '$password_encrypt' ";
     $statement_username  = mysqli_query($db,$sql_username);
     $statement_email  = mysqli_query($db,$sql_email);
     $statement_password  = mysqli_query($db,$sql_password);
- 
+   
      
      if (mysqli_num_rows($statement_username) > 0){
       
@@ -51,61 +59,31 @@
  
           
          
-   $statement = "insert into Creators(Creator_id,username,email,password) values('','$username','$email','$password');";
+   $statement = "insert into Creators(id,username,email,password) values('','$username','$email','$password_encrypt');";
    $sql = mysqli_query($db,$statement);
   
    
    if(!$sql){
-       echo "حصلت مشكلة أثناء تسجيلك , يرجى اعادة التسجيل مرة أخرى";
+       throw new Exception ("حصلت مشكلة أثناء تسجيلك , يرجى اعادة التسجيل مرة أخرى");
    }else{
   
-    header("Location:HomePage.php?"); // To prevent duplicate the same record in database and to move to home page
-  
-     exit();
-   
+       
+   header("Location:HomePage.php"); 
    
     }
      }
      
     }
+        
+    }catch(Exception $e){
+        echo $e->getMessage();
+    }
     
-    // mysqli_close($db);
-     
+ 
+      include 'header.php';
     ?>
-  
-    <ul>
-      <li class = "headerStyle"> <a href = "#"> <i class="glyphicon glyphicon-log-in"> </i>تسجيل الدخول  </a> </li>
-      <li class = "headerStyle"> <a href = "#"> <i class="glyphicon glyphicon-user"></i> تسجيل </a> </li>
-   </ul>
 
-    
-<div id="menu">
-  <ul id = "position">
-
-  <li> <a href="#"> الصفحة الرئيسية</a></li>
-  <li> <a href="#"> مشاركة </a></li>
-   <li> <a href="PersonalPage.php">  الصفحة الشخصية</a></li>
-  <li> <a href="#"> الدعم الفني </a></li>
-
-<li>  <a href="#"> الأقسام </a>
-
-<ul>
-
-   <li> <a href="#"> التصميم </a></li> 
-  <li> <a href="#"> الفن والديكور </a></li> 
-   <li>  <a href="#"> الأعمال المنزلية </a></li> 
-   <li> <a href="#"> الطبخ </a></li>
-   <li> <a href="#"> الألعاب </a></li> 
-    <li> <a href="#"> السيارات </a></li>
-
-</ul>
-
-</li>
-  </ul>
-    
-</div>
-  
- <form  id = "form"   onsubmit = "return validate_form()"   action = "SignUp.php"  method = "POST" >
+ <form  id = "form"   onsubmit = "return validate_form()"   action = ""  method = "POST" >
      
      
    <label>  حساب جديد </label>
@@ -113,7 +91,7 @@
     
         <input type="text" name="uname" id = "username" placeholder="  إسم المستخدم" >    
         <div id = "username_error"  class = "content_error"></div>
-        <span class="error"><?php echo $nameErr;?></span> <!--for check if the same name is before used by another user-->
+        <span class="error">  <?php echo $nameErr;?>   </span> 
    
    </div>
   
@@ -134,7 +112,7 @@
  <div>
        <input type="password" id="password" name="pass" placeholder="كلمة المرور">
        <div id = "password_error"    class = "content_error"></div>
-        <span class="error"> <?php echo $passwordErr;?></span>
+       <span class="error"> <?php echo $passwordErr;?></span>
  </div>
  
  <div>
